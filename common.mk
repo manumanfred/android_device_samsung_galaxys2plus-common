@@ -8,8 +8,7 @@ COMMON_PATH := device/samsung/galaxys2plus-common
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
 # Boot animation
-TARGET_SCREEN_WIDTH := 480
-TARGET_SCREEN_HEIGHT := 800
+TARGET_BOOTANIMATION_SIZE := 480x320
 
 # Init files
 PRODUCT_COPY_FILES += \
@@ -71,9 +70,7 @@ PRODUCT_COPY_FILES += \
 # Packages
 PRODUCT_PACKAGES += \
     charger_res_images \
-    Gello \
-    SamsungServiceMode \
-    Snap
+    SoundRecorder
 
 # Permissions
 PRODUCT_COPY_FILES += \
