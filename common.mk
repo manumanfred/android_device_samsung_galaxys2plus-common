@@ -7,10 +7,6 @@ COMMON_PATH := device/samsung/galaxys2plus-common
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
-# Boot animation
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/bootanimation/bootanimation.zip:system/media/bootanimation.zip
-
 # Init files
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/fstab.capri:root/fstab.capri \
