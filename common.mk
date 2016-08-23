@@ -1,5 +1,5 @@
 # Get non-open-source parts
-$(call inherit-product, vendor/samsung/galaxys2plus-common/galaxys2plus-common-vendor.mk)
+#$(call inherit-product, vendor/samsung/galaxys2plus-common/galaxys2plus-common-vendor.mk)
 
 # Include path
 COMMON_PATH := device/samsung/galaxys2plus-common
