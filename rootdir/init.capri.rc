@@ -84,6 +84,10 @@ on post-fs-data
     chown system system /sys/class/leds/button-backlight/brightness
     chmod 0660 /sys/class/leds/button-backlight/brightness
 
+    # Grant permission to modify the color_temp setting
+    chown system graphics /sys/class/graphics/fb0/color_temp
+    chmod 0664 /sys/class/graphics/fb0/color_temp
+
     # for HDCP 1.x
     chown system system /efs/hdcp.keys
     chmod 0640 /efs/hdcp.keys
