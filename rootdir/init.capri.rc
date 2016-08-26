@@ -28,8 +28,6 @@ on init
     mount tmpfs tmpfs /tmp
     chmod 1775 /tmp
 
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
     symlink /dev/block/mmcblk0p11 /dev/block/param
