@@ -6,6 +6,9 @@ USE_CAMERA_STUB := true
 # Platform
 TARGET_BOARD_PLATFORM := capri
 
+# Clang
+USE_CLANG_PLATFORM_BUILD := true
+
 # CPU
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
