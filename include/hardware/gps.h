@@ -471,6 +471,8 @@ typedef struct {
     float   azimuth;
     /** Unknown Samsung element. */
     int     padding;
+    /** Placeholder for Samsung ABI compat. */
+    int     unknown;
 } GpsSvInfo;
 
 /** Represents SV status. */
