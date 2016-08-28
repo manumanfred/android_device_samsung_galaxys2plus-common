@@ -53,7 +53,6 @@
 /data/misc/radio(/.*)?                          u:object_r:ril_db_file:s0
 /data/system/yas.cfg                            u:object_r:geomagneticd_data_file:s0
 /data/system/yas-backup.cfg                     u:object_r:geomagneticd_data_file:s0
-/data/gps(/.*)?                                 u:object_r:gps_data_file:s0
 /data/.gps.interface.pipe.to_gpsd               u:object_r:gps_data_file:s0
 /data/.gps.interface.pipe.to_jni                u:object_r:gps_data_file:s0
 /data/.gpsd.lock                                u:object_r:gps_data_file:s0
@@ -75,4 +74,3 @@
 #
 /sys/devices/platform/bcmbt-rfkill.1/rfkill/rfkill0/state -- u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/platform/bcmbt-rfkill.1/rfkill/rfkill0/type -- u:object_r:sysfs_bluetooth_writable:s0
-/sys/devices/virtual/graphics/fb0/color_temp -- u:object_r:sysfs_display:s0
