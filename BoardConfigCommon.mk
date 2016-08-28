@@ -36,12 +36,13 @@ TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 9017753
 
-# This is actually 1610612736, but reducing to 1049 MB to support users using repartition.
+# This is actually 1610612736, but reducing to 1048.4 MB to support users using repartition.
 # Feel free to increase when needed
 # See: http://forum.xda-developers.com/showpost.php?p=55293011&postcount=1
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1099956224
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1099327079
+
 # Disable journaling on system.img to save space.
 BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 
