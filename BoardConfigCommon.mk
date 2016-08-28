@@ -68,9 +68,9 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_FORCE_SCREENSHOT_CPU_PATH := true
 
-
-# RIL
-BOARD_RIL_CLASS := ../../../device/samsung/galaxys2plus-common/ril/
+# RIL (Disable it for now, getting build errors commandsinterface,
+# IccUtils.bytesToHexString(dc.uusInfo.getUserData)
+#BOARD_RIL_CLASS := ../../../device/samsung/galaxys2plus-common/ril/
 
 # GPS
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2plus-common/include
