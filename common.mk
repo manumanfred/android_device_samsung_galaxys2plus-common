@@ -25,8 +25,8 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 
 # Stlport
-#PRODUCT_PACKAGES += \
-#    libstlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 # GPS
 PRODUCT_PACKAGES += \
