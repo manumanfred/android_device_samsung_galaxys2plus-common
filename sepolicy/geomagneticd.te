@@ -13,3 +13,4 @@ allow geomagneticd system_data_file:dir rw_dir_perms;
 
 allow geomagneticd geomagneticd_data_file:dir rw_dir_perms;
 allow geomagneticd geomagneticd_data_file:file create_file_perms;
+allow geomagneticd system_file:file execmod;
