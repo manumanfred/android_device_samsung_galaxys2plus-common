@@ -73,6 +73,9 @@ TARGET_FORCE_SCREENSHOT_CPU_PATH := true
 # IccUtils.bytesToHexString(dc.uusInfo.getUserData)
 #BOARD_RIL_CLASS := ../../../device/samsung/galaxys2plus-common/ril/
 
+# Some of our vendor libs have text relocations
+TARGET_NEEDS_PLATFORM_TEXTRELS := true
+
 # GPS
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2plus-common/include
 
