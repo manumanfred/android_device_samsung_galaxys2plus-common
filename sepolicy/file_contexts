@@ -47,16 +47,10 @@
 /system/bin/vclmk                               u:object_r:vclmk_exec:s0
 
 ###################################
-# nfc
-/dev/bcm2079x       u:object_r:nfc_device:s0
-
-
-###################################
 # Data files
 #
 /data/.psm.info                                 u:object_r:wifi_data_file:s0
 /data/misc/radio(/.*)?                          u:object_r:ril_db_file:s0
-/data/nfc(/.*)?                                 u:object_r:nfc_data_file:s0
 /data/system/yas.cfg                            u:object_r:geomagneticd_data_file:s0
 /data/system/yas-backup.cfg                     u:object_r:geomagneticd_data_file:s0
 /data/.gps.interface.pipe.to_gpsd               u:object_r:gps_data_file:s0
