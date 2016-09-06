@@ -70,8 +70,8 @@ BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_FORCE_SCREENSHOT_CPU_PATH := true
 
 # RIL (Disable it for now, getting build errors commandsinterface,
-# IccUtils.bytesToHexString(dc.uusInfo.getUserData)
-#BOARD_RIL_CLASS := ../../../device/samsung/galaxys2plus-common/ril/
+# ERR:IccUtils.bytesToHexString(dc.uusInfo.getUserData)
+BOARD_RIL_CLASS := ../../../device/samsung/galaxys2plus-common/ril/
 
 # Some of our vendor libs have text relocations
 TARGET_NEEDS_PLATFORM_TEXTRELS := true

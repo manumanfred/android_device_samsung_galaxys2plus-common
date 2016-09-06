@@ -3,7 +3,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
 # Radio
-# ro.telephony.ril_class=SamsungBCMRIL \
+ ro.telephony.ril_class=SamsungBCMRIL \
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib/libbrcm_ril.so \
     ro.telephony.call_ring.multiple=0 \
