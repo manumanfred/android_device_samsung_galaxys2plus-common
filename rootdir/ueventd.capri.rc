@@ -37,6 +37,9 @@
 # Permission for NV(cal) partition
 /dev/block/mmcblk0p1      0770   radio      system
 
+# Permission for NFC
+/dev/bcm2079x         0660   nfc        nfc
+
 # for USB OTG Printer
 /dev/usb/lp*              0660   system     usb
 
