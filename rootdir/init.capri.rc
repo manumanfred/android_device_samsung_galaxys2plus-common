@@ -406,14 +406,16 @@ on fs
 
     # NFC
     setprop ro.nfc.port "I2C"
-    chmod 0600 /dev/bcm2079x
-    chown nfc nfc /dev/bcm2079x
     mkdir /data/bcmnfc
     mkdir /data/bcmnfc/param
     chmod 0755 /data/bcmnfc
     chmod 0755 /data/bcmnfc/param
     chown nfc nfc /data/bcmnfc
     chown nfc nfc /data/bcmnfc/param
+
+    # NFC: create data/nfc for nv storage. CE mode
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
 
     # Permissions for LCD
     chown system system /sys/class/lcd/panel/power_reduce
