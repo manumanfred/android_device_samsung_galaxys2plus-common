@@ -23,14 +23,12 @@ TARGET_BOOTLOADER_BOARD_NAME := capri
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_galaxys2plus_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/galaxys2plus-common
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=832M@0xA2000000 androidboot.console=ttyS0 vc-cma-mem=0/176M@0xCB000000
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=832M@0xA2000000 androidboot.selinux=permissive androidboot.console=ttyS0 vc-cma-mem=0/176M@0xCB000000
 BOARD_KERNEL_BASE := 0xa2000000
 BOARD_KERNEL_PAGESIZE := 4096
 
+# Kernel
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
-# Kernel toolchain
-#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
-#KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 # File system
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -68,13 +66,14 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 # GPU Workarounds
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_FORCE_SCREENSHOT_CPU_PATH := true
-
-# RIL (Disable it for now, getting build errors commandsinterface,
-# ERR:IccUtils.bytesToHexString(dc.uusInfo.getUserData)
-BOARD_RIL_CLASS := ../../../device/samsung/galaxys2plus-common/ril/
+DISABLE_ASHMEM_TRACKING := true
 
 # Some of our vendor libs have text relocations
 TARGET_NEEDS_PLATFORM_TEXTRELS := true
+
+# RIL
+# ERR:IccUtils.bytesToHexString(dc.uusInfo.getUserData)
+BOARD_RIL_CLASS := ../../../device/samsung/galaxys2plus-common/ril/
 
 # GPS
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2plus-common/include
