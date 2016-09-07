@@ -48,8 +48,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 4404002816
 BOARD_CACHEIMAGE_PARTITION_SIZE := 1073741824
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-ARGET_BOOTLOADER_BOARD_NAME := capri
-
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/galaxys2plus-common/rootdir/fstab.capri
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
