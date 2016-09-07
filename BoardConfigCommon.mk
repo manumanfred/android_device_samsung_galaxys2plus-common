@@ -23,7 +23,7 @@ TARGET_BOOTLOADER_BOARD_NAME := capri
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_galaxys2plus_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/galaxys2plus-common
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=832M@0xA2000000 androidboot.selinux=permissive androidboot.console=ttyS0 vc-cma-mem=0/176M@0xCB000000
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=832M@0xA2000000 androidboot.hardware=$(TARGET_BOOTLOADER_BOARD_NAME) androidboot.selinux=permissive androidboot.console=ttyS0 vc-cma-mem=0/176M@0xCB000000
 BOARD_KERNEL_BASE := 0xa2000000
 BOARD_KERNEL_PAGESIZE := 4096
 
@@ -47,6 +47,8 @@ BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 4404002816
 BOARD_CACHEIMAGE_PARTITION_SIZE := 1073741824
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+ARGET_BOOTLOADER_BOARD_NAME := capri
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/galaxys2plus-common/rootdir/fstab.capri
