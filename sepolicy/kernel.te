@@ -12,6 +12,9 @@ allow kernel wifi_data_file:file rw_file_perms;
 allow kernel block_device:dir search;
 allow kernel cam_block_device:blk_file rw_file_perms;
 
+
+allow kernel wifi_efs_file:file read;
+
 # Access /efs/wifi/.mac.info
 allow kernel efs_file:dir search;
 allow kernel efs_file:file { read open };

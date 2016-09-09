@@ -9,6 +9,8 @@ allow vclmk video_device:chr_file rw_file_perms;
 # Read /sys/module/lowmemorykiller/parameters/adj
 allow vclmk sysfs_lowmemorykiller:file r_file_perms;
 
+allow vclmk sysfs_lowmemorykiller:dir search;
+
 # Access app data in /proc/pid
 allow vclmk domain:dir r_dir_perms;
 allow vclmk domain:file r_file_perms;
