@@ -69,8 +69,7 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     Launcher3 \
     SoundRecorder \
-    Stk \
-    Browser
+    Stk
 
 # Permissions
 PRODUCT_COPY_FILES += \
