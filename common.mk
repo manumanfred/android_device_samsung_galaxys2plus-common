@@ -99,7 +99,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/backup.xml:system/etc/sysconfig/backup.xml
 
 # System properties
-$(call inherit-product, device/samsung/galaxys2plus-common/system_prop.mk)
+$(call inherit-product, $(COMMON_PATH)/system_prop.mk)
 
 # Dalvik heap config
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)

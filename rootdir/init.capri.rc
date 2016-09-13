@@ -6,6 +6,8 @@ on early-init
 
     mkdir /efs 0771 radio system
 
+    mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
+
 on init
     # Videocore
     chmod 0660 /proc/vc-dnfo
@@ -28,6 +30,7 @@ on init
     mount tmpfs tmpfs /tmp
     chmod 1775 /tmp
 
+    # Support legacy paths
     symlink /sdcard /storage/sdcard0
 
     symlink /dev/block/mmcblk0p11 /dev/block/param
@@ -466,6 +469,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
+    group system wakelock
     oneshot
 
 service p2p_supplicant /system/bin/wpa_supplicant \
@@ -482,6 +486,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
+    group system wakelock
     oneshot
 
 service macloader /system/bin/macloader
@@ -499,7 +504,7 @@ service gpsd /system/bin/glgps -c /system/etc/gps/glconfig.xml
     setenv LD_PRELOAD /system/lib/libglgps-compat.so
     class late_start
     user gps
-    group system sdcard_rw inet root radio wifi
+    group system wakelock sdcard_rw inet root radio wifi
 
 # tvserver
 service tvserver /system/bin/tvserver

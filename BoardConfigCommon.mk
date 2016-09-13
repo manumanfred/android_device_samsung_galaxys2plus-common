@@ -3,6 +3,9 @@ USE_CAMERA_STUB := true
 # Inherit from the proprietary version
 -include vendor/samsung/galaxys2plus-common/BoardConfigVendor.mk
 
+# Include path
+COMMON_PATH := device/samsung/galaxys2plus-common
+
 # Platform
 TARGET_BOARD_PLATFORM := capri
 
@@ -49,10 +52,12 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 1073741824
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/galaxys2plus-common/rootdir/fstab.capri
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/fstab.capri
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TARGET_RECOVERY_DENSITY := hdpi
+BOARD_CUSTOM_BOOTIMG_MK := $(COMMON_PATH)/mkbootimg.mk
+TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
 
 # Hardware rendering
 USE_OPENGL_RENDERER := true
@@ -61,7 +66,7 @@ BOARD_USE_MHEAP_SCREENSHOT := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 # No common_global_cflags for N...
-#COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DCAPRI_HWC -DREFBASE_JB_MR1_COMPAT_SYMBOLS
+BOARD_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DCAPRI_HWC -DREFBASE_JB_MR1_COMPAT_SYMBOLS
 
 # GPU Workarounds
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
@@ -73,16 +78,16 @@ TARGET_NEEDS_PLATFORM_TEXTRELS := true
 
 # RIL
 # ERR:IccUtils.bytesToHexString(dc.uusInfo.getUserData)
-BOARD_RIL_CLASS := ../../../device/samsung/galaxys2plus-common/ril/
+BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril/
 
 # GPS
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2plus-common/include
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_CUSTOM_BT_CONFIG := device/samsung/galaxys2plus-common/bluetooth/libbt_vndcfg.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/galaxys2plus-common/bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 
 # Connectivity - Wi-Fi
 BOARD_HAVE_SAMSUNG_WIFI             := true
@@ -117,4 +122,4 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 MALLOC_SVELTE := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/galaxys2plus-common/sepolicy
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
