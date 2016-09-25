@@ -44,6 +44,9 @@ PRODUCT_COPY_FILES += \
 
 USE_CUSTOM_AUDIO_POLICY := 1
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+
 # Media
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
@@ -69,7 +72,15 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     Launcher3 \
     SoundRecorder \
-    Stk
+    Stk \
+    FMRadio
+
+# Packages
+PRODUCT_PACKAGES += \
+    libfmjni \
+    libfmradio.v4l2-fm \
+    brcm-uim-sysfs
+
 
 # Permissions
 PRODUCT_COPY_FILES += \

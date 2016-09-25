@@ -411,6 +411,9 @@ on fs
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
 
+    # FM Radio
+    mkdir /data/misc/fm 0770 system system
+
     # Permissions for LCD
     chown system system /sys/class/lcd/panel/power_reduce
     chown system system /sys/class/backlight/panel/auto_brightness
@@ -487,6 +490,12 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 service macloader /system/bin/macloader
     class late_start
     oneshot
+
+# brcm-uim-sysfs (BT/FM/ANT+)
+service uim /system/bin/brcm-uim-sysfs
+    class late_start
+    user root
+    group bluetooth net_bt_admin net_bt
 
 on property:init.svc.macloader=stopped
     chown system root /data/.cid.info
