@@ -89,6 +89,10 @@ on post-fs-data
     chown system system /efs/hdcp.keys
     chmod 0640 /efs/hdcp.keys
 
+on early-boot
+    # set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
+
 on boot
     # SISO-ANDR_PERF :: START Changing scheduler to noop during boot
     write /sys/block/mmcblk0/queue/scheduler noop
@@ -389,6 +393,9 @@ on fs
     # For NV Read/Write
     chown radio system /dev/block/mmcblk0p1
     chmod 0770 /dev/block/mmcblk0p1
+
+    # increase read-ahead value to 256 kb
+    write /sys/block/mmcblk0/queue/read_ahead_kb 256
 
     # Permissions for DVFS
     chown radio system /sys/power/cpufreq_table
