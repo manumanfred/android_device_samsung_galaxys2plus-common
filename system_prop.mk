@@ -17,7 +17,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     brcm.hwc.no-hdmi-trans=1 \
     debug.hwui.render_dirty_regions=false \
     ro.opengles.version=131072 \
-    ro.bq.gpu_to_cpu_unsupported=1 \
     ro.zygote.disable_gl_preload=1 \
     ro.lcd_brightness=180 \
     ro.lcd_min_brightness=40 \
