@@ -35,7 +35,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.brcm.gralloc.force_hdcp=1 \
     ro.tvout.enable=true \
     wifi.interface=wlan0
-
-# Dalvik heap
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=56m

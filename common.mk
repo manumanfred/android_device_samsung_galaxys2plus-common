@@ -42,8 +42,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
-USE_CUSTOM_AUDIO_POLICY := 1
-
 # Media
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
@@ -93,9 +91,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 
-# Backup Services whitelist
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/backup.xml:system/etc/sysconfig/backup.xml
+# Backup Services whitelist (defined in vendor/ds)
+# PRODUCT_COPY_FILES += \
+#    $(COMMON_PATH)/configs/backup.xml:system/etc/sysconfig/backup.xml
 
 # System properties
 $(call inherit-product, $(COMMON_PATH)/system_prop.mk)
