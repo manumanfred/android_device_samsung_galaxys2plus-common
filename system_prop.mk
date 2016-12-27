@@ -27,5 +27,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.brcm.ap_crash=none \
     persist.brcm.cp_crash=none \
     persist.brcm.gralloc.force_hdcp=1 \
-
     wifi.interface=wlan0
